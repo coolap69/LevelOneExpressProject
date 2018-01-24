@@ -24,5 +24,9 @@ app.get("/surprise", function(request, response) {
  response.send("Awesome")
 });
 
+app.get("/currentdate", function(request, response) {
+ response.send(new Date())
+})
+
 //listen for incoming signals on this port.
 app.listen(process.env.PORT);
