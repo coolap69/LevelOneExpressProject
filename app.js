@@ -10,11 +10,19 @@ var app = express();
 app.get("/", function(request, response) {
  //you get the request first, then response
  response.send("Hello World");
- 
 });
 
-app.get()
+app.get("/name", function(request, response) {
+ response.send("Louis the Man")
+});
+
+app.get("/redirect", function(request, response) {
+ response.redirect(301, '/surprise');
+});
+
+app.get("/surprise", function(request, response) {
+ response.send("Awesome")
+});
 
 //listen for incoming signals on this port.
-
 app.listen(process.env.PORT);
